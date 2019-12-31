@@ -1,0 +1,9 @@
+# Copyright (C) 2012 The Android Open Source Project
+#
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+
+on post-fs-data
+    # Encrypt phone function
+    setprop vold.post_fs_data_done 1

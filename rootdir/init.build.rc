@@ -1,0 +1,13 @@
+#
+# init.user.rc
+#
+# Copyright (c) 2014 Amazon.com, Inc. or its affiliates.
+# All Rights Reserved.
+#
+# PROPRIETARY/CONFIDENTIAL
+#
+# Use is subject to license terms.
+#
+
+on init
+    write /proc/sys/kernel/dmesg_restrict 1

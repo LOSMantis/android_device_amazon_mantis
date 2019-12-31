@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DO NOT TRANSLATE -->
+    <string name="partner_app_sorting_mode" translatable="false">fixed</string>
+    <!-- DO NOT TRANSLATE -->
+    <string name="partner_wallpaper" translatable="false">bg_custom</string>
+    <!-- DO NOT TRANSLATE -->
+    <string name="partner_widget_provider_component_name" translatable="false">
+        com.cyanogenmod.lockclock/.ClockWidgetProvider
+    </string>
+
+    <!-- DO NOT TRANSLATE -->
+    <string-array name="home_screen_row_ordering" translatable="false">
+        <item>apps_row</item>
+        <item>partner_row</item>
+        <item>games_row</item>
+        <item>inputs_row</item>
+        <item>settings_row</item>
+    </string-array>
+
+    <item type="drawable" name="partner_row_icon">@drawable/ic_title_custom</item>
+    <item type="drawable" name="apps_row_icon">@drawable/ic_title_apps</item>
+    <item type="drawable" name="games_row_icon">@drawable/ic_title_games</item>
+    <item type="drawable" name="inputs_row_icon">@drawable/ic_title_custom</item>
+    <item type="drawable" name="settings_row_icon">@drawable/ic_title_settings</item>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="partner_font" translatable="false">sans-serif-bold</string>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="launcher_category" translatable="false">android.intent.category.LEANBACK_LAUNCHER</string>
+</resources>

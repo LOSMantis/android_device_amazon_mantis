@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <!-- Flag indicating that the media framework should allow changing
+         master volume stream and nothing else . -->
+    <bool name="config_useMasterVolume">true</bool>
+
+    <!-- Flag indicating that the media framework should support playing of sounds on volume
+         key usage.  This adds noticeable additional overhead to volume key processing, so
+         is disableable for products for which it is irrelevant. -->
+    <bool name="config_useVolumeKeySounds">false</bool>
+
+    <!-- Disable AUDIO_BECOMING_NOISY notifications. -->
+    <bool name="config_sendAudioBecomingNoisy">false</bool>
+
+    <!-- This device is data-only. -->
+    <bool name="config_voice_capable">false</bool>
+
+    <!-- This device does not allow sms service. -->
+    <bool name="config_sms_capable">false</bool>
+
+    <!-- Control the default UI mode type to use when there is no other type override
+         happening.  One of the following values (See Configuration.java):
+             1  UI_MODE_TYPE_NORMAL
+             4  UI_MODE_TYPE_TELEVISION
+             5  UI_MODE_TYPE_APPLIANCE
+         Any other values will have surprising consequences. -->
+    <integer name="config_defaultUiModeType">4</integer>
+
+    <!-- Override long press on home: launch assist intent. -->
+    <integer name="config_longPressOnHomeBehavior">2</integer>
+
+    <bool name="config_supportAutoRotation">false</bool>
+    <bool name="config_forceDefaultOrientation">true</bool>
+
+
+    <!-- Whether WiFi display is supported by this device.
+         There are many prerequisites for this feature to work correctly.
+         Here are a few of them:
+         * The WiFi radio must support WiFi P2P.
+         * The WiFi radio must support concurrent connections to the WiFi display and
+           to an access point.
+         * The Audio Flinger audio_policy.conf file must specify a rule for the "r_submix"
+           remote submix module.  This module is used to record and stream system
+           audio output to the WiFi display encoder in the media server.
+         * The remote submix module "audio.r_submix.default" must be installed on the device.
+         * The device must be provisioned with HDCP keys (for protected content).
+    -->
+    <bool name="config_enableWifiDisplay">true</bool>
+
+    <string-array name="networkAttributes">
+        <item>wifi,1,1,1,-1,true</item>
+        <item>wifi_p2p,13,1,0,-1,true</item>
+        <item>ethernet,9,9,0,-1,true</item>
+    </string-array>
+    <integer-array name="config_protectedNetworks">
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>14</item>
+        <item>15</item>
+    </integer-array>
+    <string-array name="radioAttributes">
+        <item>1,1</item>
+        <item>7,1</item>
+    </string-array>
+    <integer-array name="config_data_usage_network_types">
+        <item>0</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>14</item>
+    </integer-array>
+
+</resources>

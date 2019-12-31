@@ -1,0 +1,7 @@
+service socks5stream /system/bin/socks -i p2p0 -p 1080
+    class main
+    socket socks_sup stream 660 wifi wifi
+    disabled
+    oneshot
+    user root
+    group root system

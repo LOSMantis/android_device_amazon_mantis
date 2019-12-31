@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<global_keys version="1">
+    <key keyCode="KEYCODE_PAIRING" component="com.google.android.tv/.GlobalKeyHandler" />
+    <key keyCode="KEYCODE_SETTINGS" component="com.google.android.tv/.GlobalKeyHandler" />
+    <key keyCode="KEYCODE_TV_INPUT" component="com.google.android.tv/.GlobalKeyHandler" />
+    <key keyCode="KEYCODE_PARENTAL_CONTROLS" component="com.google.android.tv/.GlobalKeyHandler" />
+    <key keyCode="KEYCODE_SLEEP_TIMER" component="com.google.android.tv/.GlobalKeyHandler" />
+    <key keyCode="KEYCODE_TV_INPUT_HDMI_1" component="com.google.android.tv/.GlobalKeyHandler" />
+    <key keyCode="KEYCODE_TV_INPUT_HDMI_2" component="com.google.android.tv/.GlobalKeyHandler" />
+    <key keyCode="KEYCODE_TV_INPUT_HDMI_3" component="com.google.android.tv/.GlobalKeyHandler" />
+    <key keyCode="KEYCODE_TV_INPUT_HDMI_4" component="com.google.android.tv/.GlobalKeyHandler" />
+    <key keyCode="KEYCODE_TV_INPUT_COMPOSITE_1" component="com.google.android.tv/.GlobalKeyHandler" />
+    <key keyCode="KEYCODE_TV_INPUT_COMPONENT_1" component="com.google.android.tv/.GlobalKeyHandler" />
+    <key keyCode="KEYCODE_TV_ANTENNA_CABLE" component="com.google.android.tv/.GlobalKeyHandler" />
+</global_keys>

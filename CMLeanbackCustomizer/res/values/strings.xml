@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_label">CMLeanbackCustomizer</string>
+
+    <string name="partner_row_title">System apps</string>
+    <string name="apps_row_title">Apps</string>
+    <string name="games_row_title">Games</string>
+    <string name="inputs_row_title">Inputs</string>
+    <string name="settings_row_title">Settings</string>
+
+    <!-- Content description for Apps -->
+    <string name="browser">Browser</string>
+    <string name="filemanager">File Manager</string>
+
+</resources>

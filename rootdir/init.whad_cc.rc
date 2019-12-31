@@ -1,0 +1,6 @@
+# Whole Home Audio
+service whad_cc /system/bin/whad_cc
+    class main
+    user system
+    group system
+
