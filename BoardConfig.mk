@@ -1,6 +1,7 @@
 DEVICE_PATH := device/amazon/mantis
-KERNEL_PATH := kernel/amazon/mantis
 VENDOR_PATH := vendor/amazon/mantis
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+
 
 # headers
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
@@ -35,12 +36,14 @@ BOARD_KERNEL_OFFSET := 0
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-BOARD_KERNEL_IMAGE_NAME := zImage-dtb
+TARGET_PREBUILT_KERNEL := device/amazon/mantis/boot.img
+
+#BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 #TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/zImage-dtb
 
-TARGET_KERNEL_SOURCE := kernel/amazon/mantis
-TARGET_KERNEL_CONFIG := lineage_mantis_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := lineage_mantis_defconfig
+#TARGET_KERNEL_SOURCE := kernel/amazon/mantis
+#TARGET_KERNEL_CONFIG := lineage_mantis_defconfig
+#TARGET_KERNEL_VARIANT_CONFIG := lineage_mantis_defconfig
 
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00000000 --ramdisk_offset 0x03400000 --second_offset 0x00ef8000 --tags_offset 0x0dff8000
 
