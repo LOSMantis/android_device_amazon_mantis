@@ -1,11 +1,11 @@
-# ADB on recovery
+#ADB on recovery
 service.adb.root=1
-
-# set default USB configuration
+persist.service.adb.enable=1                                                    
+persist.service.debuggable=1
 persist.sys.usb.config=mtp,adb
 
 # add support for USB storage type
-persist.sys.isUsbOtgEnabled=1
+#persist.sys.isUsbOtgEnabled=1
 
 wifi.interface=wlan0
 wifi.tethering.interface=ap0
