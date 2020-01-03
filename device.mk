@@ -150,6 +150,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml
 
+# Root
+PRODUCT_PACKAGES += \
+        su
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/rootdir,root)
@@ -194,8 +198,19 @@ PRODUCT_PACKAGES += \
 
 # Network
 PRODUCT_PACKAGES += \
-    netd \
+    netd
 
+# Default.prop
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.service.acm.enable=0 \
+    ro.zygote=zygote32 \
+    ro.secure=0 \
+    ro.debuggable=1 \
+    camera.disable_zsl_mode=1 \
+    ro.mount.fs=EXT4 \
+    ro.mtk_key_manager_kb_path=1
+
+# Date
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # call dalvik heap config
