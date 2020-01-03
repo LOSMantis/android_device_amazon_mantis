@@ -52,7 +52,6 @@ lib/hw/perfboost.mt8695.so
 lib/hw/thermal.mt8695.so
 lib/hw/tv_input.default.so
 lib/hw/vibrator.default.so
-
 lib/libalsautils.so
 lib/libamazon_remotes.so
 lib/libamazondisplayservice.so
@@ -113,6 +112,8 @@ lib/libwifidiags.so
 lib/libwifidiags_jniwrapper.so
 lib/libwlfAmzn.so
 lib/libwpa_client.so
+lib/libcommon_time_client.so
+lib/libdrm.so
 #lib/libyoga.so
 #lib/libyogacore.so
 lib/modules/btmtksdio.ko
