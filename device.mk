@@ -13,6 +13,10 @@ PRODUCT_CHARACTERISTICS := tv,nosdcard
 -include external/svox/pico/lang/PicoLangFrFrInSystem.mk
 -include external/svox/pico/lang/PicoLangItItInSystem.mk
 
+# Misc
+PRODUCT_PACKAGES += \
+    libcurl
+
 # CMLeanbackCustomizer
 PRODUCT_PACKAGES += \
     CMLeanbackCustomizer
