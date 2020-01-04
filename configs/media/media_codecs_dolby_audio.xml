@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This program is protected under international and U.S. copyright laws as
+     an unpublished work. This program is confidential and proprietary to the
+     copyright owners. Reproduction or disclosure, in whole or in part, or the
+     production of derivative works therefrom without the express permission of
+     the copyright owners is prohibited.
+
+                  Copyright (C) 2016 by Dolby Laboratories,
+                             All rights reserved.
+-->
+
+<Included>
+    <Decoders>
+        <MediaCodec name="OMX.dolby.ac3.decoder" type="audio/ac3">
+            <Limit name="channel-count" max="6" />
+            <Limit name="sample-rate" ranges="32000,44100,48000" />
+            <Limit name="bitrate" range="32000-640000" />
+        </MediaCodec>
+        <MediaCodec name="OMX.dolby.eac3.decoder" type="audio/eac3">
+            <Limit name="channel-count" max="8" />
+            <Limit name="sample-rate" ranges="32000,44100,48000" />
+            <Limit name="bitrate" range="32000-6144000" />
+        </MediaCodec>
+    </Decoders>
+</Included>
