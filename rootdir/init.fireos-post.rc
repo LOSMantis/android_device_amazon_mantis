@@ -1,0 +1,70 @@
+# Init script extensions intended to run AFTER the stock AOSP init.rc content.
+# Most, if not all, service blocks and extensions to event triggers should go
+# here. See comments in init.fireos-pre.rc for exceptions.
+
+# build-variant-specific services
+import /init.build.rc
+
+#
+# boot phase triggers
+#
+
+on init
+    # Mount logd node
+    mkdir /dev/logd 0770 logd log
+    mount tmpfs tmpfs /dev/logd mode=0770,uid=1036,gid=1036,size=512K,context=u:object_r:logd_tmpfs:s0
+
+on fs
+    # Create directory for logd archive files
+    mkdir /data/logd 0770 logd log
+    # Create directory for vitals database
+    mkdir /data/vitals 0700 logd logd
+
+on post-fs-data
+    # Remove last_kmsg from previous boot. This replaces BootReceiver's deduplication method.
+    rm /data/system/SYSTEM_LAST_KMSG
+
+    # Collect last_kmsg - this replaces the BootReceiver mechanism,
+    # which lacks sufficient permissions with dmesg_restrict enabled
+    copy /proc/last_kmsg /data/system/SYSTEM_LAST_KMSG
+    chmod 0600 /data/system/SYSTEM_LAST_KMSG
+    chown system system /data/system/SYSTEM_LAST_KMSG
+
+    # Delete previous console-ramoops to prevent duplicates being sent on subsequent reboots.
+    rm /data/system/console-ramoops
+
+    # Copy console-ramoops to make it accessible by BootReceiver
+    copy /sys/fs/pstore/console-ramoops /data/system/console-ramoops
+    chmod 0600 /data/system/console-ramoops
+    chown system system /data/system/console-ramoops
+
+    write /dev/camera_running 0
+    chmod 0644 /dev/camera_running
+
+#
+# service blocks
+#
+
+service mindumpstate /system/bin/dumpstate -s -m
+    class main
+    socket dumpstate stream 0660 shell log
+    disabled
+    oneshot
+
+service post-recovery /system/bin/recovery_reporter
+    class main
+    oneshot
+
+service devicetype /system/bin/devicetype_service
+    class main
+    oneshot
+
+#
+# property triggers
+#
+
+on property:media.camera.enable=1
+    write /dev/camera_running 1
+
+on property:media.camera.enable=0
+    write /dev/camera_running 0

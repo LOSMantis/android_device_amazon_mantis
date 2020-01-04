@@ -1,0 +1,37 @@
+#
+# Init script extensions intended to run BEFORE the stock AOSP init.rc content.
+# Be careful to avoid implicit dependencies on commands that happen in
+# stock init.rc, like creating parent directories. Generally, you should
+# only add event-triggered commands here if you depend on the restorecon
+# calls that happen in the stock init.rc to set the right SELinux context.
+# Most other commands should go in init.fireos-post.rc instead.
+#
+
+#
+# boot phase triggers
+#
+
+on init
+    defseclabel u:r:untrustedd:s0
+
+on post-fs-data
+
+    # directory for debugging daemons to put thermal and battery data
+    mkdir /data/debug_service 0771 system system
+
+    # playready data and control dirs
+    mkdir /data/playready 0770 drm drmrpc
+    mkdir /data/securestop 0770 drm drmrpc
+    mkdir /data/key_provisioning 0770 drm drmrpc
+
+    # create directory for storing autotraces
+    mkdir /data/autotrace 0771 root system
+
+#
+# service blocks - only add service blocks here if event triggers defined
+#                  in this file call the new service
+#
+
+#
+# property triggers likely belong entirely in init.fireos-post.rc.
+#

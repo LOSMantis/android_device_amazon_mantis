@@ -1,0 +1,20 @@
+#
+# This is the init.rc wrapper script for FireOS. It should consist purely
+# of import directives. All init script logic should go into a file
+# directly or recursively imported from here. Do not add any init script
+# content to this file.
+#
+
+# Service blocks that override stock AOSP should be defined in this file.
+# These are usually different per-vendor, and sometime per-chip.
+import /init.base.rc
+# Event hooks in this file run _before_ those below, in particular before
+# the stock AOSP init.rc.
+import /init.fireos-pre.rc
+# The unmodified stock AOSP init.rc is renamed to init.aosp.rc during
+# compilation for FireOS product configurations. Most target-specific init
+# scripts are recursively imported from this file.
+import /init.aosp.rc
+# Event hooks in this file run after everything else, including base and
+# device-specific init scripts.
+import /init.fireos-post.rc

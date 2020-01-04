@@ -27,9 +27,9 @@ on property:wlan.interface.p2p.group=*
 
 on init
     mount tmpfs tmpfs /mnt/media_rw/ mode=0755,uid=1000,gid=1000
-    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
-    mkdir /storage/usbotg 0700 root root
-    mount tmpfs tmpfs /storage/usbotg mode=0755,uid=1000,gid=1000
+    #mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    #mkdir /storage/usbotg 0700 root root
+    #mount tmpfs tmpfs /storage/usbotg mode=0755,uid=1000,gid=1000
     verity_load_state
     export DOWNLOAD_CACHE /cache
 
@@ -108,7 +108,7 @@ on init
     #           Developers expect data stored in these locations to be available over long periods of time."
     # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
     #
-    # export SECONDARY_STORAGE /storage/sdcard1
+    export SECONDARY_STORAGE /storage/udisk0
 
     # Disable suspend
     write /sys/power/wake_lock disablesuspend
@@ -119,9 +119,21 @@ service usb_cp_type /system/bin/amzn_usb_cp_type.sh
 	user root
 	oneshot
 
-service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+#service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+    #class late_start
+    #disabled
+    
+    service fuse_udisk0 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/udisk0 /storage/udisk0
     class late_start
     disabled
+    
+    service fuse_udisk1 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/udisk1 /storage/udisk1
+    class late_start
+    disabled
+    
+    service fuse_udisk2 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/udisk2 /storage/udisk2
+    class late_start
+    disabled   
 
 # BT MAC
 service btmac system/bin/btmac.sh

@@ -64,7 +64,7 @@ on property:sys.usb.config=acm && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
-on property:sys.usb.config=mtp && property:sys.usb.configfs=1
+on property:sys.usb.config=mtp_no && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/functions/mtp.gs0/os_desc/interface.MTP/compatible_id "MTP"
     write /config/usb_gadget/g1/os_desc/use 1
     write /config/usb_gadget/g1/idProduct 0x3a1
@@ -74,7 +74,7 @@ on property:sys.usb.config=ptp && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/os_desc/use 1
     write /config/usb_gadget/g1/idProduct 0x200B
 
-on property:sys.usb.config=adb && property:sys.usb.configfs=1
+on property:sys.usb.config=mtp && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idProduct 0x3a8
     rm /config/usb_gadget/g1/configs/b.1/f1
     rm /config/usb_gadget/g1/configs/b.1/f2

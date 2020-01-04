@@ -9,5 +9,5 @@
 # Use is subject to license terms.
 #
 
-on init
-    write /proc/sys/kernel/dmesg_restrict 1
+#on init
+#    write /proc/sys/kernel/dmesg_restrict 1
