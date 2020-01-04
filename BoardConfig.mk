@@ -16,6 +16,8 @@ TARGET_BOARD_PLATFORM := mt8695
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
+TARGET_USES_HWC2 := true
+
 # Architecture
 TARGET_ARCH := arm
 TARGET_CPU_VARIANT := cortex-a7
