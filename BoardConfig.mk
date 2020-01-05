@@ -18,17 +18,29 @@ TARGET_NO_BOOTLOADER := true
 
 TARGET_USES_HWC2 := true
 
-# Architecture
+
 TARGET_ARCH := arm
-TARGET_CPU_VARIANT := cortex-a7
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_ARCH_VARIANT_CPU := cortex-a7
-TARGET_CPU_VARIANT:= cortex-a53
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_SMP := true
-TARGET_CPU_CORTEX_A53 := true
-ARCH_ARM_HAVE_NEON := true
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+# Architecture
+#TARGET_ARCH := arm
+#TARGET_CPU_VARIANT := cortex-a7
+#TARGET_CPU_VARIANT:= cortex-a53
+#TARGET_ARCH_VARIANT := cortex-a7
+#TARGET_ARCH_VARIANT_CPU := cortex-a7
+#TARGET_CPU_ABI := armeabi-v7a
+#TARGET_CPU_ABI2 := armeabi
+#TARGET_CPU_SMP := true
+#TARGET_CPU_CORTEX_A53 := true
+#ARCH_ARM_HAVE_NEON := true
+
+#TARGET_USES_64_BIT_BINDER := true
+
 
 # Kernel Config
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
