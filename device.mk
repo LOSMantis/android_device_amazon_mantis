@@ -28,7 +28,8 @@ PRODUCT_PACKAGES += \
     tv_input.default \
     LeanbackLauncher \
     LeanbackIme \
-    Overscan
+    Overscan \
+    CanvasPackageInstaller
 
 # From build/target/product/core_base.mk
 PRODUCT_PACKAGES += \
@@ -140,6 +141,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     $(DEVICE_PATH)/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml \
     $(DEVICE_PATH)/permissions/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml
