@@ -299,3 +299,4 @@ lib/libmediaextension.so
 lib/libdrm.so
 lib/libserviceutility.so
 vendor/lib/libMtkOmxVenc.so
+lib/libusb.so
