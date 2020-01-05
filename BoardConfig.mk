@@ -23,10 +23,12 @@ TARGET_ARCH := arm
 TARGET_CPU_VARIANT := cortex-a7
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a7
-TARGET_CPU_VARIANT:= cortex-a7
+TARGET_CPU_VARIANT:= cortex-a53
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
+TARGET_CPU_CORTEX_A53 := true
+ARCH_ARM_HAVE_NEON := true
 
 # Kernel Config
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
@@ -49,6 +51,7 @@ TARGET_KERNEL_CONFIG := mantis_defconfig
 BOARD_MKBOOTIMG_ARGS := --base 0x40000000 --ramdisk_offset 0x04000000 --second_offset 0x00f00000 --tags_offset 0x0e000000
 
 # MTK Hardware
+BOARD_USES_MTK_AUDIO := true
 BOARD_HAS_MTK_HARDWARE := true
 
 # Target has /vendor
