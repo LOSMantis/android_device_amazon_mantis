@@ -108,7 +108,7 @@ lib/libwebrtc_audio_preprocessing.so
 lib/libwebviewchromium_loader.so
 lib/libwebviewchromium_plat_support.so
 lib/libwebviewextchromium.so
-lib/libwifi-service.so
+#lib/libwifi-service.so
 lib/libwifidiags.so
 lib/libwifidiags_jniwrapper.so
 lib/libwlfAmzn.so
