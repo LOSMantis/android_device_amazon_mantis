@@ -26,7 +26,7 @@ bin/wpa_supplicant
 
 # system/etc
 etc/.tp/thermal.policy.conf
-etc/audio_effects.conf
+#etc/audio_effects.conf
 etc/clatd.conf
 etc/bluetooth/bt_did.conf
 etc/bluetooth/bt_stack.conf
@@ -44,14 +44,20 @@ lib/hw/audio.a2dp.default.so
 lib/hw/audio.btle.default.so
 lib/hw/audio.proxy.default.so
 lib/hw/audio.usb.default.so
-lib/hw/audio_policy.default.so
-lib/hw/audio_policy.stub.so
+#lib/hw/audio_policy.default.so
+#lib/hw/audio_policy.stub.so
 lib/hw/keystore.default.so
 lib/hw/perfboost.default.so
 lib/hw/perfboost.mt8695.so
 lib/hw/thermal.mt8695.so
 lib/hw/tv_input.default.so
 lib/hw/vibrator.default.so
+
+lib/hw/audio.primary.default.so
+lib/hw/audio.r_submix.default.so
+lib/hw/local_time.default.so
+lib/hw/gralloc.default.so
+lib/hw/power.default.so
 
 lib/libalsautils.so
 lib/libamazon_remotes.so
@@ -303,6 +309,5 @@ lib/libms12.so
 lib/libaudiopolicymanagerdefault.so
 lib/libeffects.so
 
-lib/hw/bluetooth.default.so
 
 
