@@ -68,7 +68,6 @@ lib/libaudiostream.so
 lib/libaudiostream_jni.AMAZON.so
 lib/libaudiostream_jni.so
 lib/libaudioutils.so
-lib/libbluetooth_jni.so
 lib/libbluetooth_mtk.so
 lib/libbt-vendor.so
 lib/libdha-aidl.so
