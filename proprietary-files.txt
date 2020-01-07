@@ -188,6 +188,7 @@ vendor/lib/hw/hwcomposer.mt8695.so
 vendor/lib/hw/keystore.mt8695.so
 vendor/lib/hw/memtrack.mt8695.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib/mediadrm/libdrmfpsplugin.so
 vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 vendor/lib/mediadrm/libplayreadydrmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
@@ -310,4 +311,11 @@ lib/libaudiopolicymanagerdefault.so
 lib/libeffects.so
 
 
+vendor/etc/public.libraries.txt
+lib/libnativeloader.so	
+lib/libpryon.so
+lib/libnativesocket_csm_jni.so
+
+vendor/bin/uree_fps_test
+vendor/lib/liburee_fps.so
 
