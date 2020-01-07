@@ -5,6 +5,58 @@ VENDOR_PATH := vendor/amazon/mantis
 PRODUCT_IS_ATV_SDK := true
 PRODUCT_CHARACTERISTICS := tv,nosdcard
 
+PRODUCT_PACKAGES := \
+    TvProvider \
+    TvSettings \
+    tv_input.default
+
+# From build/target/product/core_base.mk
+PRODUCT_PACKAGES += \
+    ContactsProvider \
+    DefaultContainerService \
+    UserDictionaryProvider \
+    libaudiopreprocessing \
+    libfilterpack_imageproc \
+    libgabi++ \
+    libkeystore \
+    mdnsd \
+    requestsync
+
+# From build/target/product/core.mk
+PRODUCT_PACKAGES += \
+    BasicDreams \
+    CalendarProvider \
+    CaptivePortalLogin \
+    CertInstaller \
+    ExternalStorageProvider \
+    FusedLocation \
+    InputDevices \
+    KeyChain \
+    PicoTts \
+    PacProcessor \
+    PrintSpooler \
+    ProxyHandler \
+    SharedStorageBackup \
+    VpnDialogs \
+    com.android.media.tv.remoteprovider \
+    com.android.media.tv.remoteprovider.xml
+
+# From build/target/product/generic_no_telephony.mk
+PRODUCT_PACKAGES += \
+    Bluetooth \
+    SystemUI \
+    librs_jni \
+    audio.primary.default \
+    audio_policy.default \
+    clatd \
+    clatd.conf \
+    local_time.default \
+    screenrecord
+
+# Enable frame-exact AV sync
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.media.avsync=true
+
 # Include available languages for TTS in the system image
 -include external/svox/pico/lang/PicoLangDeDeInSystem.mk
 -include external/svox/pico/lang/PicoLangEnGBInSystem.mk
@@ -15,7 +67,7 @@ PRODUCT_CHARACTERISTICS := tv,nosdcard
 
 # Misc
 PRODUCT_PACKAGES += \
-    libcurl
+    libcurl \
 
 # CMLeanbackCustomizer
 PRODUCT_PACKAGES += \
@@ -23,9 +75,6 @@ PRODUCT_PACKAGES += \
 
 # TV Packages
 PRODUCT_PACKAGES += \
-    TvProvider \
-    TvSettings \
-    tv_input.default \
     LeanbackLauncher \
     LeanbackIme \
     Overscan \
@@ -54,60 +103,32 @@ PRODUCT_PACKAGES += \
     libstagefright_http_support.so \
     libstagefright_httplive.so \
     libstagefright_omx.so \
-    libstagefright_soft_aacdec.so \
-    libstagefright_soft_aacenc.so \
-    libstagefright_soft_amrdec.so \
-    libstagefright_soft_amrnbenc.so \
-    libstagefright_soft_amrwbenc.so \
-    libstagefright_soft_flacenc.so \
-    libstagefright_soft_g711dec.so \
-    libstagefright_soft_gsmdec.so \
-    libstagefright_soft_h264dec.so \
-    libstagefright_soft_h264enc.so \
-    libstagefright_soft_hevcdec.so \
-    libstagefright_soft_mp3dec.so \
-    libstagefright_soft_mpeg4dec.so \
-    libstagefright_soft_mpeg4enc.so \
-    libstagefright_soft_opusdec.so \
-    libstagefright_soft_rawdec.so \
-    libstagefright_soft_vorbisdec.so \
-    libstagefright_soft_vpxdec.so \
-    libstagefright_soft_vpxenc.so \
-    libstagefright_wfd.so \
-    libstagefright_yuv.so
+    libstagefright_soft_aacdec \
+    libstagefright_soft_aacenc \
+    libstagefright_soft_amrdec \
+    libstagefright_soft_amrnbenc \
+    libstagefright_soft_amrwbenc \
+    libstagefright_soft_avcdec \
+    libstagefright_soft_avcenc \
+    libstagefright_soft_flacenc \
+    libstagefright_soft_g712dec \
+    libstagefright_soft_gsmdec \
+    libstagefright_soft_hevcdec \
+    libstagefright_soft_mp3dec \
+    libstagefright_soft_mpeg2dec \
+    libstagefright_soft_mpeg4dec \
+    libstagefright_soft_mpeg4enc \
+    libstagefright_soft_opusdec \
+    libstagefright_soft_rawdec \
+    libstagefright_soft_vorbisdec \
+    libstagefright_soft_vpxdec \
+    libstagefright_soft_vpxenc \
+    libstagefright_soft_h264dec \
+    libstagefright_soft_h264enc \
+    libstagefright_soft_hevcdec \
+    libstagefright_wfd \
+    libstagefright_yuv
 
-# From build/target/product/core.mk
-PRODUCT_PACKAGES += \
-    BasicDreams \
-    CalendarProvider \
-    CertInstaller \
-    ExternalStorageProvider \
-    FusedLocation \
-    InputDevices \
-    KeyChain \
-    Launcher2 \
-    PicoTts \
-    PacProcessor \
-    PrintSpooler \
-    ProxyHandler \
-    SharedStorageBackup \
-    VpnDialogs
-
-# From build/target/product/generic_no_telephony.mk
-PRODUCT_PACKAGES += \
-    Bluetooth \
-    SystemUI \
-    librs_jni \
-    audio.primary.default \
-    audio_policy.default \
-    clatd \
-    clatd.conf \
-    local_time.default \
-    screenrecord
-
-# Enable frame-exact AV sync
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.media.avsync=true
 
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
 $(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
@@ -116,14 +137,15 @@ $(call inherit-product-if-exists, external/google-fonts/dancing-script/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/carrois-gothic-sc/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/coming-soon/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/cutive-mono/fonts.mk)
-$(call inherit-product-if-exists, external/lohit-fonts/fonts.mk)
 $(call inherit-product-if-exists, external/noto-fonts/fonts.mk)
-$(call inherit-product-if-exists, external/naver-fonts/fonts.mk)
+$(call inherit-product-if-exists, external/roboto-fonts/fonts.mk)
+$(call inherit-product-if-exists, external/hyphenation-patterns/patterns.mk)
 $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
 $(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 
 # ------- Android TV end -------- #
+
 # Device overlay
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
@@ -156,6 +178,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_dolby_audio.xml:system/etc/media_codecs_dolby_audio.xml
+    $(LOCAL_PATH)/configs/media/audio_effects.conf:system/etc/audio_effects.conf
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -174,14 +197,17 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
+    audio_policy.stub \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.stub \
     libalsautils \
     libaudio-resampler \
+    libaudioroute \
+    libaudiospdif \
+    libeffects \
     libtinyalsa \
     libtinycompress \
-    libtinyxml
+    libtinyxml 
     
 # Bluetooth
 PRODUCT_PACKAGES += \
