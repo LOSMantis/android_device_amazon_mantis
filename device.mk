@@ -78,7 +78,6 @@ PRODUCT_PACKAGES += \
     LeanbackLauncher \
     LeanbackIme \
     Overscan \
-    CanvasPackageInstaller \
     SetupWraith
 
 # From build/target/product/core_base.mk
