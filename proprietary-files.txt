@@ -116,7 +116,6 @@ lib/libwpa_client.so
 #lib/libyoga.so
 #lib/libyogacore.so
 lib/modules/btmtksdio.ko
-lib/modules/btmtksdio.ko
 lib/modules/ozwpan.ko
 lib/modules/wlan_mt76x8_sdio.ko
 lib/modules/wlan_mt76x8_sdio_prealloc.ko
@@ -300,3 +299,11 @@ lib/libdrm.so
 lib/libserviceutility.so
 vendor/lib/libMtkOmxVenc.so
 lib/libusb.so
+
+lib/libms12.so
+lib/libaudiopolicymanagerdefault.so
+lib/libeffects.so
+
+lib/hw/bluetooth.default.so
+
+
