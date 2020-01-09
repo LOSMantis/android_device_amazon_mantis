@@ -44,8 +44,8 @@ lib/hw/audio.a2dp.default.so
 lib/hw/audio.btle.default.so
 lib/hw/audio.proxy.default.so
 lib/hw/audio.usb.default.so
-#lib/hw/audio_policy.default.so
-#lib/hw/audio_policy.stub.so
+lib/hw/audio_policy.default.so
+lib/hw/audio_policy.stub.so
 lib/hw/keystore.default.so
 lib/hw/perfboost.default.so
 lib/hw/perfboost.mt8695.so
@@ -318,4 +318,11 @@ lib/libnativesocket_csm_jni.so
 
 vendor/bin/uree_fps_test
 vendor/lib/liburee_fps.so
+
+
+lib/libaudiopolicymanager.so
+
+lib/libmiracast_sink.so
+priv-app/DisplayMirroring/DisplayMirroring.apk
+
 

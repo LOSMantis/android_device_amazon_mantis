@@ -65,6 +65,8 @@ BOARD_MKBOOTIMG_ARGS := --base 0x40000000 --ramdisk_offset 0x04000000 --second_o
 # MTK Hardware
 BOARD_USES_MTK_AUDIO := true
 BOARD_HAS_MTK_HARDWARE := true
+CUSTOM_HAL_AUDIOFLINGER = audio
+
 
 # Target has /vendor
 TARGET_COPY_OUT_VENDOR := vendor

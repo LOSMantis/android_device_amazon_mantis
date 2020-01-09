@@ -4,6 +4,27 @@ persist.service.adb.enable=1
 persist.service.debuggable=1
 persist.sys.usb.config=mtp,adb
 
+# Netflix
+ro.nrdp.modelgroup=FIRETVSTICK2018
+ro.nrdp.validation=ninja_5.1
+
+ro.amzn_drm.amzn_dha=yes
+ro.amzn_drm.hdcp1=yes
+ro.amzn_drm.hdcp2_tx=yes
+ro.amzn_drm.lek=yes
+ro.amzn_drm.pek=yes
+ro.amzn_drm.playready=yes
+ro.amzn_drm.widevine=yes
+
+apts_tune.non_tunnel.avls=25
+apts_tune.non_tunnel_dlb=-50
+apts_tune.non_tunnel_pcm=-75
+apts_tune.tunnel.avls=-13
+camera.disable_zsl_mode=1
+
+tunnelmode.pcm.apts.adjust=-150
+tunnelmode.raw.apts.adjust=-140
+
 rild.libpath=mtk-ril.so
 rild.libargs=-d /dev/ttyC0
 
