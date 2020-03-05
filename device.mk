@@ -129,7 +129,6 @@ PRODUCT_PACKAGES += \
     libstagefright_wfd \
     libstagefright_yuv
 
-
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
 $(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
 $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
@@ -188,9 +187,8 @@ PRODUCT_COPY_FILES += \
 
 # libshims
 PRODUCT_PACKAGES += \
-	libshim_liblog \
-	libshim_libwvm \
-        libshim_libgui
+     libshim_liblog \
+     libshim_libgui
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -229,8 +227,9 @@ PRODUCT_PACKAGES += \
 
 # Network
 PRODUCT_PACKAGES += \
-    netd \
+    netd
 
+# Build date
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # call dalvik heap config

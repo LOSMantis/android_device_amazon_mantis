@@ -1,9 +1,7 @@
 DEVICE_PATH := device/amazon/mantis
 VENDOR_PATH := vendor/amazon/mantis
-$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
 
-
-# headers
+# Headers
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # inherit from the proprietary version
@@ -16,9 +14,7 @@ TARGET_BOARD_PLATFORM := mt8695
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
-TARGET_USES_HWC2 := true
-
-
+# Arch
 TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -26,21 +22,6 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
-
-# Architecture
-#TARGET_ARCH := arm
-#TARGET_CPU_VARIANT := cortex-a7
-#TARGET_CPU_VARIANT:= cortex-a53
-#TARGET_ARCH_VARIANT := cortex-a7
-#TARGET_ARCH_VARIANT_CPU := cortex-a7
-#TARGET_CPU_ABI := armeabi-v7a
-#TARGET_CPU_ABI2 := armeabi
-#TARGET_CPU_SMP := true
-#TARGET_CPU_CORTEX_A53 := true
-#ARCH_ARM_HAVE_NEON := true
-
-#TARGET_USES_64_BIT_BINDER := true
-
 
 # Kernel Config
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
@@ -50,8 +31,6 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,32N2 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_FLASH_BLOCK_SIZE := 131072
-
-#TARGET_PREBUILT_KERNEL := device/amazon/mantis/boot.img
 
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 #TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/zImage-dtb
@@ -66,7 +45,6 @@ BOARD_MKBOOTIMG_ARGS := --base 0x40000000 --ramdisk_offset 0x04000000 --second_o
 BOARD_USES_MTK_AUDIO := true
 BOARD_HAS_MTK_HARDWARE := true
 CUSTOM_HAL_AUDIOFLINGER = audio
-
 
 # Target has /vendor
 TARGET_COPY_OUT_VENDOR := vendor
@@ -89,9 +67,9 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mt66xx
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mt66xx
 WIFI_DRIVER_FW_PATH_PARAM := "/dev/wmtWifi"
-WIFI_DRIVER_FW_PATH_STA:=STA
-WIFI_DRIVER_FW_PATH_AP:=AP
-WIFI_DRIVER_FW_PATH_P2P:=P2P
+WIFI_DRIVER_FW_PATH_STA:= STA
+WIFI_DRIVER_FW_PATH_AP:= AP
+WIFI_DRIVER_FW_PATH_P2P:= P2P
 
 # Bluetooth defines
 MTK_BT_SUPPORT := yes
@@ -119,6 +97,9 @@ TARGET_HAS_WAITFORVSYNC := true
 # Surfaceflinger optimization for VD surfaces
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
+# HWC
+TARGET_USES_HWC2 := true
+
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
@@ -130,6 +111,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Block Based OTA
 BLOCK_BASED_OTA := true
 
 # SECCOMP
@@ -145,7 +127,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto
 LINKER_FORCED_SHIM_LIBS := \
     /system/lib/liblog.so|libshim_liblog.so \
     /system/lib/libcutils.so|libshim_liblog.so \
-    /system/vendor/lib/libwvm.so|libshim_libwvm.so \
     /system/lib/libgui.so|libshim_libgui.so
 
 # TWRP
@@ -167,5 +148,6 @@ TW_DEFAULT_BACKUP_LIST := "/system_image;/vendor_image;/data;/boot;"
 # Use dlmalloc instead of jemalloc for mallocs
 MALLOC_SVELTE := true
 
-# Disable API check
+# Extras
 WITHOUT_CHECK_API := true
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)

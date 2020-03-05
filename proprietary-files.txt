@@ -97,6 +97,7 @@ lib/libopus_jni.AMAZON.so
 lib/libopus_jni.so
 lib/libopuscodec.so
 lib/libradio.so
+lib/libusb.so
 lib/libradio_metadata.so
 lib/libradioservice.so
 lib/libreference-ril.so
@@ -109,6 +110,9 @@ lib/libsoundtriggerservice.so
 lib/libvulkan.so
 lib/libwakewordserver_jni.AMAZON.so
 lib/libwakewordserver_jni.so
+lib/libnativeloader.so	
+lib/libpryon.so
+lib/libnativesocket_csm_jni.so
 lib/libwebrtc_audio_preprocessing.so
 lib/libwebviewchromium_loader.so
 lib/libwebviewchromium_plat_support.so
@@ -117,7 +121,15 @@ lib/libwebviewextchromium.so
 lib/libwifidiags.so
 lib/libwifidiags_jniwrapper.so
 lib/libwlfAmzn.so
+lib/libms12.so
+lib/libaudiopolicymanagerdefault.so
+lib/libeffects.so
 lib/libwpa_client.so
+lib/libcommon_time_client.so
+lib/libqservice.so
+lib/libmediaextension.so
+lib/libdrm.so
+lib/libserviceutility.so
 #lib/libyoga.so
 #lib/libyogacore.so
 lib/modules/btmtksdio.ko
@@ -135,6 +147,8 @@ lib/soundfx/libeffectproxy.so
 lib/soundfx/libldnhncr.so
 lib/soundfx/libreverbwrapper.so
 lib/soundfx/libvisualizer.so
+lib/libaudiopolicymanager.so
+lib/libmiracast_sink.so
 
 # vendor/app
 vendor/app/AtciService/AtciService.apk
@@ -144,6 +158,7 @@ vendor/bin/autokd
 vendor/bin/gsm0710muxd
 vendor/bin/gsm0710muxdmd2
 vendor/bin/hdmi
+vendor/bin/uree_fps_test
 vendor/bin/kisd
 vendor/bin/mfv_ut
 vendor/bin/rpmb_svc
@@ -167,6 +182,7 @@ vendor/etc/slp_conf
 vendor/etc/throttle.sh
 vendor/etc/init/rpmb_svc.rc
 vendor/etc/init/securetime.rc
+vendor/etc/public.libraries.txt
 
 # vendor/firmware
 vendor/firmware/EEPROM_MT7668.bin
@@ -231,8 +247,10 @@ vendor/lib/libhdmi.so
 vendor/lib/libhdmiservice.so
 vendor/lib/libion_mtk.so
 vendor/lib/libm4u.so
+vendor/lib/libMtkOmxVenc.so
 vendor/lib/libmemtrack_GL.so
 vendor/lib/libmrdump.so
+vendor/lib/liburee_fps.so
 vendor/lib/libmsbc_mtk.so
 vendor/lib/libmtk_drvb.so
 vendor/lib/libmtk_eglx.so
@@ -297,32 +315,4 @@ etc/init/mediaserver.rc
 etc/init/servicemanager.rc
 etc/init/vdc.rc
 
-
-lib/libcommon_time_client.so
-lib/libqservice.so
-lib/libmediaextension.so
-lib/libdrm.so
-lib/libserviceutility.so
-vendor/lib/libMtkOmxVenc.so
-lib/libusb.so
-
-lib/libms12.so
-lib/libaudiopolicymanagerdefault.so
-lib/libeffects.so
-
-
-vendor/etc/public.libraries.txt
-lib/libnativeloader.so	
-lib/libpryon.so
-lib/libnativesocket_csm_jni.so
-
-vendor/bin/uree_fps_test
-vendor/lib/liburee_fps.so
-
-
-lib/libaudiopolicymanager.so
-
-lib/libmiracast_sink.so
 priv-app/DisplayMirroring/DisplayMirroring.apk
-
-

@@ -1,4 +1,4 @@
-#ADB on recovery
+# ADB on recovery
 service.adb.root=1
 persist.service.adb.enable=1                                                    
 persist.service.debuggable=1
@@ -8,6 +8,7 @@ persist.sys.usb.config=mtp,adb
 ro.nrdp.modelgroup=FIRETVSTICK2018
 ro.nrdp.validation=ninja_5.1
 
+# Amazon DRM
 ro.amzn_drm.amzn_dha=yes
 ro.amzn_drm.hdcp1=yes
 ro.amzn_drm.hdcp2_tx=yes
@@ -16,15 +17,20 @@ ro.amzn_drm.pek=yes
 ro.amzn_drm.playready=yes
 ro.amzn_drm.widevine=yes
 
+# APTS
 apts_tune.non_tunnel.avls=25
 apts_tune.non_tunnel_dlb=-50
 apts_tune.non_tunnel_pcm=-75
 apts_tune.tunnel.avls=-13
+
+# Camera
 camera.disable_zsl_mode=1
 
+# TUNNELMODE
 tunnelmode.pcm.apts.adjust=-150
 tunnelmode.raw.apts.adjust=-140
 
+# RIL
 rild.libpath=mtk-ril.so
 rild.libargs=-d /dev/ttyC0
 
@@ -147,10 +153,7 @@ persist.amzn.wha.bt_disable=false
 ro.build.lab126.buildtype=Nightly
 ro.build.lab126.project=mantis_fireos_ship_6268
 ro.build.lab126.build=2315
-ro.build.configuration=tv
 ro.build.version.serial=2315
-ro.config.notification_sound=OnTheHunt.ogg
-ro.config.alarm_alert=Alarm_Classic.ogg
 config.disable_networktime=true
 dalvik.vm.skpheapgrowthlimit=20m
 dalvik.vm.skpheapmaxfree=512k
@@ -234,5 +237,4 @@ dalvik.vm.dex2oat-threads=3
 persist.sys.dalvik.vm.lib.2=libart.so
 dalvik.vm.isa.arm.variant=cortex-a7
 dalvik.vm.isa.arm.features=default
-net.bt.name=Android
 
