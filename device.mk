@@ -1,4 +1,4 @@
-DEVICE_PATH := device/amazon/mantis
+LOCAL_PATH := device/amazon/mantis
 VENDOR_PATH := vendor/amazon/mantis
 
 # ------- Android TV start -------- #
@@ -146,8 +146,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 # ------- Android TV end -------- #
 
 # Device overlay
-DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Languages
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Device uses high-density artwork where available
@@ -164,8 +165,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-    $(DEVICE_PATH)/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml \
-    $(DEVICE_PATH)/permissions/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml
+    $(LOCAL_PATH)/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml \
+    $(LOCAL_PATH)/permissions/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -183,7 +184,7 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(DEVICE_PATH)/rootdir,root)
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir,root)
 
 # libshims
 PRODUCT_PACKAGES += \
@@ -192,7 +193,7 @@ PRODUCT_PACKAGES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/keylayouts/Generic.kl:system/usr/keylayout/Generic.kl
+    $(LOCAL_PATH)/keylayouts/Generic.kl:system/usr/keylayout/Generic.kl
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -228,6 +229,11 @@ PRODUCT_PACKAGES += \
 # Network
 PRODUCT_PACKAGES += \
     netd
+
+# Init Custom Config Files
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/init/audioserver.rc:system/etc/init/audioserver.rc
+
 
 # Build date
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0

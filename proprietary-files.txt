@@ -298,7 +298,6 @@ etc/init/netd.rc
 etc/init/timeupdate.rc
 etc/init/vold.rc
 etc/init/atrace-server.rc
-etc/init/cameraserver.rc
 etc/init/drmserver.rc
 etc/init/gatekeeperd.rc
 etc/init/logd.rc
@@ -306,12 +305,10 @@ etc/init/mediaextractor.rc
 etc/init/racoon.rc
 etc/init/uncrypt.rc
 etc/init/wifi_log_levels.rc
-etc/init/audioserver.rc
 etc/init/debuggerd.rc
 etc/init/dumpstate.rc
 etc/init/installd.rc
 etc/init/mdnsd.rc
-etc/init/mediaserver.rc
 etc/init/servicemanager.rc
 etc/init/vdc.rc
 
