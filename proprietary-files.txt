@@ -112,7 +112,7 @@ lib/libwakewordserver_jni.AMAZON.so
 lib/libwakewordserver_jni.so
 lib/libnativeloader.so	
 lib/libpryon.so
-lib/libnativesocket_csm_jni.so
+#lib/libnativesocket_csm_jni.so
 lib/libwebrtc_audio_preprocessing.so
 lib/libwebviewchromium_loader.so
 lib/libwebviewchromium_plat_support.so
