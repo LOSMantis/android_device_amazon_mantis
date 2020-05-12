@@ -54,3 +54,6 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 extract "$MY_DIR"/proprietary-files.txt "$SRC"
 
 "$MY_DIR"/setup-makefiles.sh
+
+sed 's/:system.vendor/:vendor/g' ../../../vendor/amazon/mantis/mantis-vendor.mk > ../../../vendor/amazon/mantis/mantis-vendor.tmp
+mv ../../../vendor/amazon/mantis/mantis-vendor.tmp ../../../vendor/amazon/mantis/mantis-vendor.mk
