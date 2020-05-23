@@ -179,7 +179,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_dolby_audio.xml:system/etc/media_codecs_dolby_audio.xml \
     $(LOCAL_PATH)/configs/media/audio_effects.conf:system/etc/audio_effects.conf \
     $(LOCAL_PATH)/configs/media/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/configs/media/mixer_paths.xml:vendor/etc/mixer_paths.xml
+    $(LOCAL_PATH)/configs/media/mixer_paths.xml:vendor/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/configs/media/audio_policy.conf:system/etc/audio_policy.conf
+
+
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -197,7 +200,10 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
+    audio.btle.default \
     audio_policy.stub \
+    audio.proxy.default \
+    audio.primary.mt8695 \
     audio.r_submix.default \
     audio.usb.default \
     libalsautils \
@@ -207,7 +213,8 @@ PRODUCT_PACKAGES += \
     libeffects \
     libtinyalsa \
     libtinycompress \
-    libtinyxml 
+    libtinyxml \
+    libaudiostream
     
 # Bluetooth
 PRODUCT_PACKAGES += \
